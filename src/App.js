@@ -2,28 +2,7 @@ import './App.css';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import Launches from './Components/Launches';
-import './Components/styles.scss';
-
-// const cards = [
-//    {
-//       id: '1',
-//       variant: 'hover',
-//       front: 'Hover',
-//       back: 'Back',
-//    },
-//    {
-//       id: '2',
-//       variant: 'click',
-//       front: 'Click',
-//       back: 'Back',
-//    },
-//    {
-//       id: '3',
-//       variant: 'focus',
-//       front: 'Focus',
-//       back: 'Back',
-//    },
-// ];
+import 'react-multi-carousel/lib/styles.css';
 
 function App() {
    const [launchData, setLaunchData] = useState([]);
@@ -40,12 +19,8 @@ function App() {
    }, []);
 
    return (
-      <div className="container">
-         <div className="row h-100">
-            <div className="col d-flex flex-column flex-md-row justify-content-around align-items-center">
-               <Launches launchData={launchData} />
-            </div>
-         </div>
+      <div>
+         <Launches launchData={launchData} />;
       </div>
    );
 }

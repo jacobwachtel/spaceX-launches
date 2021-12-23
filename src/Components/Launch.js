@@ -18,9 +18,7 @@ const Launch = ({
    return (
       <div
          tabIndex={index}
-         className={cn('flip-card-outer', {
-            'focus-trigger': index === 'focus',
-         })}
+         className="flip-card-outer"
          onClick={(e) => setShowBack(!showBack)}
       >
          <div
@@ -30,17 +28,28 @@ const Launch = ({
             })}
          >
             <div className="card front">
-               <div className="card-body d-flex justify-content-center align-items-center">
+               <div className="card-body">
                   <img className="card image" src={flickrImage} alt="" />
-                  <p className="card-text fs-1 fw-bold">{flightNumber}</p>
-                  <p className="card-text fs-1 fw-bold">{launchDate}</p>
+                  <div className="card-text">
+                     <p className="flight-number">{flightNumber}</p>
+                     <p className="launch-date">{launchDate}</p>
+                  </div>
                </div>
             </div>
             <div className="card back">
-               <div className="card-body d-flex justify-content-center align-items-center">
-                  <p className="card-text fs-1 fw-bold">{`Launch Details: ${details}`}</p>
+               <div className="card-body">
+                  <div className="card-details">
+                     <h3>Launch Details</h3>
+                     <p className="details" id="details">
+                        {details}
+                     </p>
+                  </div>
+
                   <YoutubeEmbed youtubeLink={videoLink} />
-                  <p className="card-text fs-1 fw-bold">{articleLink}</p>
+
+                  <p className="article-link" id="article-link">
+                     <a href={articleLink}>{articleLink}</a>
+                  </p>
                </div>
             </div>
          </div>
